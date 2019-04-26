@@ -21,5 +21,5 @@ docker run -it --rm -v `pwd`:/workdir  naokikishi/pandoc-docker mdtopdf INPUT.md
 
 2. Watch your markdown file.
 ```bash
-mywatch INPUT.md  'docker run -it --rm -v `pwd`:/workdir  naokikishi/pandoc-docker mdtopdf INPUT.md'
+mywatch.sh INPUT.md  'docker run -it --rm -v `pwd`:/workdir  naokikishi/pandoc-docker mdtopdf INPUT.md'
 ```

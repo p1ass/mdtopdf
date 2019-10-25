@@ -1,25 +1,29 @@
-# pandoc image for converting markdown to PDF
+# pandoc-docker
 
-## Usage
+Pandoc docker image for converting markdown to PDF
+
+## Getting Started
 
 1. Pull docker image.
 ```bash
-docker pull naokikishi/pandoc-docker
+docker pull plass/pandoc-docker
 ```
 
 2. Run docker image.
 ```bash
-docker run -it --rm -v `pwd`:/workdir  naokikishi/pandoc-docker mdtopdf INPUT.md
+docker run -it --rm -v `pwd`:/workdir  plass/pandoc-docker mdtopdf INPUT.md
 ```
 
-## Advanced Usage
+## Advanced Usages
 
-### Generate pdf on save
-1. Setup file watcher script.
+### Generate a pdf file on save
 
-[ファイルの変更を定期的に監視して、特定のコマンドを実行するシェルスクリプト](https://qiita.com/tamanobi/items/74b62e25506af394eae5)
-
-2. Watch your markdown file.
 ```bash
-mywatch.sh INPUT.md  'docker run -it --rm -v `pwd`:/workdir  naokikishi/pandoc-docker mdtopdf INPUT.md'
+docker run -it --rm -v `pwd`:/workdir  pl1ass/pandoc-docker watch mdtopdf INPUT.md
+```
+
+### Generate a tex file from markdown
+
+```bash
+docker run -it --rm -v `pwd`:/workdir  plass/pandoc-docker mdtotex INPUT.md
 ```

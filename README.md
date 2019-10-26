@@ -15,6 +15,7 @@ You can see example markdown file and converted PDF file from the link below👇
 ## Getting Started
 
 1. Pull docker image.
+
 ```bash
 $ docker pull plass/mdtopdf
 ```
@@ -22,16 +23,29 @@ $ docker pull plass/mdtopdf
 ⚠️ This docker image size is **1.68GB**. I recommend pulling it using the fast Internet connection.
 
 2. Generate PDF file.
+
 ```bash
 $ docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
 ```
 
 ## Advanced Usages
 
+### Generate 2 columns PDF file
+
+```bash
+$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtopdf-2cols INPUT.md
+```
+
 ### Generate PDF file on save
 
 ```bash
 $ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf w-mdtopdf INPUT.md
+```
+
+### Generate 2 columns PDF file on save
+
+```bash
+$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf w-mdtopdf-2cols INPUT.md
 ```
 
 ### Set alias
@@ -40,11 +54,15 @@ You can decrease typing using `alias` command as below,
 
 ```bash
 $ echo "alias mdtopdf='docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf'" >> ~/.bash_profile
+$ echo "alias mdtopdf-2cols='docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf  mdtopdf-2cols'" >> ~/.bash_profile
 $ echo "alias w-mdtopdf='docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf  w-mdtopdf'" >> ~/.bash_profile
+$ echo "alias w-mdtopdf-2cols='docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf  w-mdtopdf-2cols'" >> ~/.bash_profile
 $ source ~/.bash_profile
- 
+
 $ mdtopdf INPUT.md
+$ mdtopdf-2cols INPUT.md
 $ w-mdtopdf INPUT.md
+$ w-mdtopdf-2cols INPUT.md
 ```
 
 **zsh** : Modify `.zshrc` instead of `.bash_profile`.  
@@ -54,4 +72,5 @@ $ w-mdtopdf INPUT.md
 
 ```bash
 $ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtotex INPUT.md
+$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtotex-2cols INPUT.md
 ```

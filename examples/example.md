@@ -27,6 +27,15 @@ $$
 \frac{\partial N(x,t)}{\partial t} = D \frac{\partial^2N(x,t)}{\partial x^2}
 $${#eq:equation}
 
+また、`\begin{eqnarray}`が使えるので、イコールを揃える時はこちらを使うと良い。
+
+\begin{eqnarray}
+x + y &=& 5 \label{easy_eq} \\
+x &=& 2
+\end{eqnarray}
+
+式\ref{easy_eq}を解くと、$y = 3$が得られる。
+
 # texコマンド
 
 一度`.tex`ファイルに変換してからPDFに変換するので、texのコマンドも使用できる。
@@ -65,6 +74,13 @@ $${#eq:equation}
 表への参照を貼る時は`[@tbl:LABEL]`のように書く。
 
 標本化周波数を変えたときの観測周波数の変化を[@tbl:table]に示す。
+
+## セクション参照 {#sec:section}
+
+`[@sec:LABEL]`と書くことでセクションを参照できる。
+
+[@sec:section]によると、セクションの参照も可能である。
+
 
 # 注釈
 

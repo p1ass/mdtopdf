@@ -1,0 +1,3 @@
+#! /bin/bash
+
+watcher $1  mdtotex $1

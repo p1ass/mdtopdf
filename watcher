@@ -1,0 +1,15 @@
+#!/bin/sh
+# Thanks to http://mizti.hatenablog.com/entry/2013/01/27/204343
+
+INTERVAL=1
+last=`ls --full-time $1 | awk '{print $6"-"$7}'`
+while true; do
+        sleep $INTERVAL
+        current=`ls --full-time $1 | awk '{print $6"-"$7}'`
+        if [ $last != $current ] ; then
+                echo ""
+                echo "updated: $current"
+                last=$current
+                eval $2 $3
+        fi
+done

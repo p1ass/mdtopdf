@@ -28,13 +28,19 @@ $ docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
 
 ## Advanced Usages
 
+### Generate PDF file on save
+
+```bash
+$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf w-mdtopdf INPUT.md
+```
+
 ### Set alias
 
 You can decrease typing using `alias` command as below,
 
 ```bash
 $ echo "alias mdtopdf='docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf'" >> ~/.bash_profile
-$ echo "alias w-mdtopdf='docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf watch mdtopdf'" >> ~/.bash_profile
+$ echo "alias w-mdtopdf='docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf  w-mdtopdf'" >> ~/.bash_profile
 $ source ~/.bash_profile
  
 $ mdtopdf INPUT.md
@@ -43,12 +49,6 @@ $ w-mdtopdf INPUT.md
 
 **zsh** : Modify `.zshrc` instead of `.bash_profile`.  
 **Ubuntu** : Modify `.bashrc` instead of `.bash_profile`.
-
-### Generate PDF file on save
-
-```bash
-$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf watch mdtopdf INPUT.md
-```
 
 ### Generate tex file from markdown
 

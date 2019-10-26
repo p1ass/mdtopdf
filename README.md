@@ -1,6 +1,6 @@
-# pandoc-docker 🐳
+# mdtopdf 🐳
 
-pandoc-docker is the  pandoc docker image for converting markdown to PDF using TeX typesetting.
+mdtopdf is the pandoc docker image for converting markdown to PDF using TeX typesetting.
 
 ## Examples
 
@@ -14,14 +14,14 @@ You can see example markdown file and converted PDF file from the link below👇
 
 1. Pull docker image.
 ```bash
-docker pull plass/pandoc
+docker pull plass/mdtopdf
 ```
 
 ⚠️ This docker image size is **1.68GB**. I recommend pulling it using the fast Internet connection.
 
 2. Generate PDF file.
 ```bash
-docker run -it --rm -v `pwd`:/workdir  plass/pandoc mdtopdf INPUT.md
+docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtopdf INPUT.md
 ```
 
 ## Advanced Usages
@@ -29,11 +29,11 @@ docker run -it --rm -v `pwd`:/workdir  plass/pandoc mdtopdf INPUT.md
 ### Generate PDF file on save
 
 ```bash
-docker run -it --rm -v `pwd`:/workdir  plass/pandoc watch mdtopdf INPUT.md
+docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf watch mdtopdf INPUT.md
 ```
 
 ### Generate tex file from markdown
 
 ```bash
-docker run -it --rm -v `pwd`:/workdir  plass/pandoc mdtotex INPUT.md
+docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtotex INPUT.md
 ```

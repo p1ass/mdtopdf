@@ -21,10 +21,26 @@ docker pull plass/mdtopdf
 
 2. Generate PDF file.
 ```bash
-docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtopdf INPUT.md
+docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
 ```
 
 ## Advanced Usages
+
+### Set alias
+
+You can decrease typing using `alias` command as below,
+
+```bash
+$ echo "alias mdtopdf='docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf'" >> ~/.bash_profile
+$ echo "alias w-mdtopdf='docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf watch mdtopdf'" >> ~/.bash_profile
+$ source ~/.bash_profile
+ 
+$ mdtopdf INPUT.md
+$ w-mdtopdf INPUT.md
+```
+
+**zsh** : Modify `.zshrc` instead of `.bash_profile`.  
+**Ubuntu** : Modify `.bashrc` instead of `.bash_profile`.
 
 ### Generate PDF file on save
 

@@ -19,20 +19,20 @@ docker pull plass/pandoc
 
 ⚠️ This docker image size is **1.68GB**. I recommend pulling it using the fast Internet connection.
 
-2. Run docker image.
+2. Generate PDF file.
 ```bash
 docker run -it --rm -v `pwd`:/workdir  plass/pandoc mdtopdf INPUT.md
 ```
 
 ## Advanced Usages
 
-### Generate a pdf file on save
+### Generate PDF file on save
 
 ```bash
 docker run -it --rm -v `pwd`:/workdir  plass/pandoc watch mdtopdf INPUT.md
 ```
 
-### Generate a tex file from markdown
+### Generate tex file from markdown
 
 ```bash
 docker run -it --rm -v `pwd`:/workdir  plass/pandoc mdtotex INPUT.md

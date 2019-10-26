@@ -1,4 +1,4 @@
-# pandoc-docker
+# pandoc-docker 🐳
 
 pandoc-docker is the  pandoc docker image for converting markdown to PDF using TeX typesetting.
 

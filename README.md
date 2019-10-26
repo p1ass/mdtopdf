@@ -14,14 +14,14 @@ You can see example markdown file and converted PDF file from the link below👇
 
 1. Pull docker image.
 ```bash
-docker pull plass/mdtopdf
+$ docker pull plass/mdtopdf
 ```
 
 ⚠️ This docker image size is **1.68GB**. I recommend pulling it using the fast Internet connection.
 
 2. Generate PDF file.
 ```bash
-docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
+$ docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
 ```
 
 ## Advanced Usages
@@ -45,11 +45,11 @@ $ w-mdtopdf INPUT.md
 ### Generate PDF file on save
 
 ```bash
-docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf watch mdtopdf INPUT.md
+$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf watch mdtopdf INPUT.md
 ```
 
 ### Generate tex file from markdown
 
 ```bash
-docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtotex INPUT.md
+$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtotex INPUT.md
 ```

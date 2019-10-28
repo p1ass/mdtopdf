@@ -26,7 +26,7 @@ $ docker pull plass/mdtopdf
 $ docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
 ```
 
-**Windows (PowerShell)**: Replace `` `pwd` `` to `$(pwd)`
+**Windows (PowerShell)** : Replace `` `pwd` `` to `${pwd}`
 
 
 ## Advanced Usages
@@ -52,6 +52,16 @@ $ w-mdtopdf INPUT.md
 
 **zsh** : Modify `.zshrc` instead of `.bash_profile`.  
 **Ubuntu** : Modify `.bashrc` instead of `.bash_profile`.
+
+If you're using Docker for Windows, setting alias is a bit tricky.  Use following command.
+
+```
+> echo 'Function mdtopdf {Param($file) docker run -it --rm -v ${pwd}:/workdir plass/mdtopdf mdtopdf $(Get-ChildItem $file -Name)}' >> $PROFILE
+> echo 'Function mdtopdf {Param($file) docker run -it --rm -v ${pwd}:/workdir plass/mdtopdf w-mdtopdf $(Get-ChildItem $file -Name)}' >> $PROFILE
+> . $PROFILE
+> mdtopdf INPUT.md
+> w-mdtopdf INPUT.md
+```
 
 ### Generate tex file from markdown
 

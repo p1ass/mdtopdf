@@ -26,6 +26,9 @@ $ docker pull plass/mdtopdf
 $ docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
 ```
 
+**Windows (PowerShell)**: Replace `` `pwd` `` to `$(pwd)`
+
+
 ## Advanced Usages
 
 ### Generate PDF file on save

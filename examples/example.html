@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="@p1ass" />
+  <title>PDFの変換例</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">PDFの変換例</h1>
+<p class="author"><span class="citation" data-cites="p1ass">@p1ass</span></p>
+<p class="date">//</p>
+</header>
+<h1 id="目的"><span class="header-section-number">1</span> 目的</h1>
+<p>PDFに変換できるマークダウンの記法を学ぶ。</p>
+<h1 id="見出し"><span class="header-section-number">2</span> 見出し</h1>
+<h2 id="h2見出し"><span class="header-section-number">2.1</span> h2見出し</h2>
+<h3 id="インライン数式"><span class="header-section-number">2.1.1</span> インライン数式</h3>
+<p>インライン数式はドル記号<code>$</code>で囲って、 <img style="vertical-align:middle" src="https://latex.codecogs.com/png.latex?V%20%3D%20R%20%5Ctimes%20I" alt="V = R \times I" title="V = R \times I" />のようにTeXと同じ書き方で書くことができる。</p>
+<h3 id="番号付きディスプレイ数式モード"><span class="header-section-number">2.1.2</span> 番号付きディスプレイ数式モード</h3>
+<p>数式ブロックはドル記号2つ<code>$$</code>で囲む。<code>{#eq:equation}</code>を最後につけることでラベルを貼れる。 参照は<code>[@eq:equation]</code>のように書くことができる。</p>
+<p>不純物濃度の深さ方向分布は式 1の拡散方程式を解くことで得られる。</p>
+<p><span id="eq:equation"><br /><img style="vertical-align:middle" src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7B%5Cpartial%20N%28x%2Ct%29%7D%7B%5Cpartial%20t%7D%20%3D%20D%20%5Cfrac%7B%5Cpartial%5E2N%28x%2Ct%29%7D%7B%5Cpartial%20x%5E2%7D%0A%5Cqquad%281%29" alt="
+\frac{\partial N(x,t)}{\partial t} = D \frac{\partial^2N(x,t)}{\partial x^2}
+\qquad(1)" title="
+\frac{\partial N(x,t)}{\partial t} = D \frac{\partial^2N(x,t)}{\partial x^2}
+\qquad(1)" /><br /></span></p>
+<p>また、<code>\begin{eqnarray}</code>が使えるので、イコールを揃える時はこちらを使うと良い。</p>
+<p><br /><img style="vertical-align:middle" src="https://latex.codecogs.com/png.latex?%5Cbegin%7Beqnarray%7D%0Ax%20%2B%20y%20%26%3D%26%205%20%5Clabel%7Beasy_eq%7D%20%5C%5C%0Ax%20%26%3D%26%202%0A%5Cend%7Beqnarray%7D" alt="\begin{eqnarray}
+x + y &amp;=&amp; 5 \label{easy_eq} \\
+x &amp;=&amp; 2
+\end{eqnarray}" title="\begin{eqnarray}
+x + y &amp;=&amp; 5 \label{easy_eq} \\
+x &amp;=&amp; 2
+\end{eqnarray}" /><br /></p>
+<p>式を解くと、<img style="vertical-align:middle" src="https://latex.codecogs.com/png.latex?y%20%3D%203" alt="y = 3" title="y = 3" />が得られる。</p>
+<h1 id="texコマンド"><span class="header-section-number">3</span> texコマンド</h1>
+<p>一度<code>.tex</code>ファイルに変換してからPDFに変換するので、texのコマンドも使用できる。 例えば、<code>\clearpage</code>を使うことで改ページができる。</p>
+<p>改ページ前↑</p>
+
+<p>改ページ後↓</p>
+<h1 id="画像"><span class="header-section-number">4</span> 画像</h1>
+<p>画像はマークダウンと同じ記法で書くことができる。文末に<code>{#fig:LABEL}</code>とすることでラベルを付与できる。<code>{#fig:LABEL height=100mm}</code>とすることで、画像の大きさも調整できる。</p>
+<figure>
+<img src="solar.png" alt="図 1: 太陽電池の出力特性" id="fig:solar" style="height:100mm" /><figcaption>図 1: 太陽電池の出力特性</figcaption>
+</figure>
+<p><code>[@fig:LABEL]</code>とすることで、参照を貼れる。</p>
+<p>太陽電池の出力特性を図 1に示す。</p>
+<h1 id="表"><span class="header-section-number">5</span> 表</h1>
+<p>表のタイトル、ラベルは<code>:タイトル {#tbl:LABEL}</code>のように書くことができる。</p>
+<div id="tbl:table">
+<table>
+<caption>表 1: 標本化周波数を変えたときの観測周波数の変化</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">標本化周波数 <img style="vertical-align:middle" src="https://latex.codecogs.com/png.latex?%5Cmathrm%7B%28kSa%2Fs%29%7D" alt="\mathrm{(kSa/s)}" title="\mathrm{(kSa/s)}" /></th>
+<th style="text-align: right;">観測周波数 <img style="vertical-align:middle" src="https://latex.codecogs.com/png.latex?%5Cmathrm%7B%28kHz%29%7D" alt="\mathrm{(kHz)}" title="\mathrm{(kHz)}" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: right;">6.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">250</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">500</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1000</td>
+<td style="text-align: right;">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>表への参照を貼る時は<code>[@tbl:LABEL]</code>のように書く。</p>
+<p>標本化周波数を変えたときの観測周波数の変化を表 1に示す。</p>
+<h2 id="sec:section"><span class="header-section-number">5.1</span> セクション参照</h2>
+<p><code>[@sec:LABEL]</code>と書くことでセクションを参照できる。</p>
+<p>節 5.1によると、セクションの参照も可能である。</p>
+<h1 id="注釈"><span class="header-section-number">6</span> 注釈</h1>
+<p>注釈<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<h1 id="マークダウン記法"><span class="header-section-number">7</span> マークダウン記法</h1>
+<ul>
+<li>箇条書き1
+<ul>
+<li>サブ箇条書き1</li>
+<li>サブ箇条書き2</li>
+</ul></li>
+<li>箇条書き2</li>
+<li>箇条書き3</li>
+</ul>
+<ol type="1">
+<li>番号付きリスト1
+<ol type="1">
+<li>サブ番号付きリスト1</li>
+<li>サブ番号付きリスト1</li>
+</ol></li>
+<li>番号付きリスト2</li>
+<li>番号付きリスト3</li>
+</ol>
+<p><strong>太字</strong></p>
+<p><del>取り消し線</del></p>
+<p>水平線</p>
+<hr />
+<p><a href="https://google.com">googleへのリンク</a></p>
+<p>コードブロック</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" title="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="dt">int</span> main(<span class="dt">void</span>) {</a>
+<a class="sourceLine" id="cb1-4" title="4">    printf(<span class="st">&quot;Hello World</span><span class="sc">\n</span><span class="st">&quot;</span>);</a>
+<a class="sourceLine" id="cb1-5" title="5">}</a></code></pre></div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>注釈とはほげほげ<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>

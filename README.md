@@ -55,3 +55,19 @@ $ w-mdtopdf INPUT.md
 ```bash
 $ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtotex INPUT.md
 ```
+
+### Generate html file from markdown
+
+```bash
+$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtohtml INPUT.md
+```
+
+[example converted HTML](examples/example.html)
+
+### Generate docx file from markdown
+
+```bash
+$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtodocx INPUT.md
+```
+
+[example converted docx](examples/example.docx)

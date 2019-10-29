@@ -1,0 +1,6 @@
+#!/bin/bash
+str=$1
+pandoc -s -N ${str%.*}.md --webtex -t html \
+-F pandoc-crossref  \
+-M "crossrefYaml=/config/crossref_config.yaml" \
+-V geometry:margin=1in | pandoc -f html -o ${str%.*}.docx 

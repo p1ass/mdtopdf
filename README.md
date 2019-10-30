@@ -55,7 +55,7 @@ $ w-mdtopdf INPUT.md
 
 If you're using Docker for Windows, setting alias is a bit tricky.  Use following command.
 
-```
+```powershell
 > echo 'Function mdtopdf {Param($file) docker run -it --rm -v ${pwd}:/workdir plass/mdtopdf mdtopdf $(Get-ChildItem $file -Name)}' >> $PROFILE
 > echo 'Function mdtopdf {Param($file) docker run -it --rm -v ${pwd}:/workdir plass/mdtopdf w-mdtopdf $(Get-ChildItem $file -Name)}' >> $PROFILE
 > . $PROFILE

@@ -3,9 +3,9 @@ FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && \
-		apt install wget texlive-luatex texlive-lang-cjk lmodern texlive-xetex -y && \
-                apt-get clean && \
-                rm -rf /var/lib/apt/lists/*
+        apt install wget texlive-luatex texlive-lang-cjk lmodern texlive-xetex -y && \
+        apt-get clean && \
+        rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb && \
         dpkg -i pandoc-2.7.2-1-amd64.deb && \

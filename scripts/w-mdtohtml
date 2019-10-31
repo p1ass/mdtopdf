@@ -1,0 +1,3 @@
+#! /bin/bash
+
+watcher $1  mdtohtml $1

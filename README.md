@@ -23,7 +23,7 @@ $ docker pull plass/mdtopdf
 
 2. Generate PDF file.
 ```bash
-$ docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
+$ docker run -it --rm -v "`pwd`":/workdir plass/mdtopdf mdtopdf INPUT.md
 ```
 
 **Windows (PowerShell)** : Replace `` `pwd` `` to `${pwd}`
@@ -34,7 +34,7 @@ $ docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf INPUT.md
 ### Generate PDF file on save
 
 ```bash
-$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf w-mdtopdf INPUT.md
+$ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf w-mdtopdf INPUT.md
 ```
 
 ### Set alias
@@ -42,8 +42,8 @@ $ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf w-mdtopdf INPUT.md
 You can decrease typing using `alias` command as below,
 
 ```bash
-$ echo "alias mdtopdf='docker run -it --rm -v `pwd`:/workdir plass/mdtopdf mdtopdf'" >> ~/.bash_profile
-$ echo "alias w-mdtopdf='docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf  w-mdtopdf'" >> ~/.bash_profile
+$ echo "alias mdtopdf='docker run -it --rm -v "`pwd`":/workdir plass/mdtopdf mdtopdf'" >> ~/.bash_profile
+$ echo "alias w-mdtopdf='docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf  w-mdtopdf'" >> ~/.bash_profile
 $ source ~/.bash_profile
  
 $ mdtopdf INPUT.md
@@ -66,13 +66,13 @@ If you're using Docker for Windows, setting alias is a bit tricky.  Use followin
 ### Generate tex file from markdown
 
 ```bash
-$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtotex INPUT.md
+$ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf mdtotex INPUT.md
 ```
 
 ### Generate html file from markdown
 
 ```bash
-$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtohtml INPUT.md
+$ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf mdtohtml INPUT.md
 ```
 
 [example converted HTML](examples/example.html)
@@ -80,7 +80,7 @@ $ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtohtml INPUT.md
 ### Generate docx file from markdown
 
 ```bash
-$ docker run -it --rm -v `pwd`:/workdir  plass/mdtopdf mdtodocx INPUT.md
+$ docker run -it --rm -v "`pwd`":/workdir  plass/mdtopdf mdtodocx INPUT.md
 ```
 
 [example converted docx](examples/example.docx)

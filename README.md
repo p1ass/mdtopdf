@@ -26,8 +26,8 @@ $ docker pull plass/mdtopdf
 $ docker run -it --rm -v "`pwd`":/workdir plass/mdtopdf mdtopdf INPUT.md
 ```
 
-**Windows (PowerShell)** : Replace `` `pwd` `` to `${pwd}`
-
+**Windows (PowerShell)** : Replace `` `pwd` `` to `${pwd}`  
+**fish shell** : Replace `` `pwd` `` to `(pwd)`
 
 ## Advanced Usages
 

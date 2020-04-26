@@ -3,4 +3,5 @@ str=$1
 pandoc -s -N ${str%.*}.md -o ${str%.*}.tex -V documentclass=ltjarticle --pdf-engine=lualatex \
 -F pandoc-crossref \
 -M "crossrefYaml=/config/crossref_config.yaml" \
--V geometry:margin=1in
+-V geometry:margin=1in \
+--listings -H /config/listings-setup.tex

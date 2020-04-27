@@ -1,11 +1,6 @@
 #!/bin/bash
 str=$1
-mdtotex $str
-sed -i -e 's/\\passthrough{\\lstinline\!\([^!]*\)\!}/\\texttt{\1}/g' \
-    -e 's/\\passthrough{\\lstinline"\([^"]*\)"}/\\texttt{\1}/g' \
-    -e 's/\\passthrough{\\lstinline'"'"'\([^'"'"']*\)'"'"'}/\\texttt{\1}/g' \
-    -e 's/\\passthrough{\\lstinline\*\([^*]*\)\*}/\\texttt{\1}/g' \
-    -e 's/\\passthrough{\\lstinline,\([^,]*\),}/\\texttt{\1}/g' \
-    ${str%.*}.tex 
-lualatex ${str%.*}.tex > /dev/null
-rm ${str%.*}.aux ${str%.*}.log ${str%.*}.tex
+pandoc -s -N ${str%.*}.md -o ${str%.*}.pdf -V documentclass=ltjarticle --pdf-engine=lualatex \
+-F pandoc-crossref  \
+-M "crossrefYaml=/config/crossref_config.yaml" \
+-V geometry:margin=1in

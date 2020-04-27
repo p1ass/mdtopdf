@@ -15,6 +15,7 @@ RUN wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-am
 
 COPY scripts/ /usr/local/bin/
 COPY crossref_config.yaml /config/crossref_config.yaml
+COPY listings-setup.tex /config/listings-setup.tex
 
 VOLUME /workdir
 WORKDIR /workdir

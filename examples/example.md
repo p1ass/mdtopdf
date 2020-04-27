@@ -124,3 +124,8 @@ int main(void) {
     printf("Hello World\n");
 }
 ```
+
+
+listingsパッケージ
+
+\lstinputlisting[language=c, caption = ソースコード ,label = source]{example.c}

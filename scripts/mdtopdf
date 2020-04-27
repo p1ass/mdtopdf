@@ -1,6 +1,6 @@
 #!/bin/bash
 str=$1
 pandoc -s -N ${str%.*}.md -o ${str%.*}.pdf -V documentclass=ltjarticle --pdf-engine=lualatex \
--F pandoc-crossref  \
+-F pandoc-crossref \
 -M "crossrefYaml=/config/crossref_config.yaml" \
--V geometry:margin=1in
+-V geometry:margin=1in -H /config/listings-setup.tex

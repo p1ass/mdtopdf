@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && \
         apt install wget texlive-luatex texlive-lang-cjk lmodern texlive-xetex \
-        texlive-latex-extra latexmk git latexdiff -y && \
+        texlive-latex-extra texlive-fonts-recommended latexmk git latexdiff -y && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/*
 
